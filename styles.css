@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('/assets/img/bg-nature.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.card {
+  width: 350px;
+  height: 450px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-front {
+  background-color: rgba(110, 119, 48, 0.9);
+  color: #F7F7F4;
+}
+
+.card-back {
+  background-color: rgba(163, 162, 154, 0.9);
+  color: #2E351F;
+  transform: rotateY(180deg);
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.signature {
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.music-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.music-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 300px;
+    height: 400px;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .signature {
+    font-size: 1.1em;
+  }
+}
